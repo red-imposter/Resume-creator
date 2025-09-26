@@ -1,0 +1,26 @@
+<DOCTYPE html>
+<html lang = "ru">
+<head>
+    <meta charset= "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>Дата создания:</b> {{date}} 
+    <p><a href="/regenerate">Обновить информацию с помощью get запроса</a></p>
+    <br>Отправьте post запрос по адресу localhost:80/resume/generate<br>
+    <p><a href="/">Обновить информацию с помощью post запроса</a></p>
+    <h1> Резюме </h1>
+    <h2>Личные данные:</h2>
+    <b>Имя:</b> {{name}} <br> 
+    <b>Username:</b> {{username}} <br>
+    <b>Электронная почта:</b> {{email}} <br>
+    <b>ID:</b> {{id}}<br>
+    <h2>Достижения</h2>
+    {% for achievement in achievements %}
+    <b>Тип события:</b> {{achievement.action_name}} <br>
+    <b>Проект:</b> {{achievement.project_id}} <br>
+    <b>Дата:</b> {{achievement.created_at}} <br> <br>
+    {% endfor %}
+</body>
+</html>
